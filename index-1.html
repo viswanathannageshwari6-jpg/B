@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#10172a" />
+  <title>SkillBridge | Your next opportunity starts here</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="SkillBridge home">
+      <span class="brand-mark">S</span><span>SkillBridge</span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">☰</button>
+    <nav class="nav-links" id="navLinks">
+      <a class="active" href="#home">Home</a>
+      <a href="#opportunities">Opportunities</a>
+      <a href="#learning">Learning</a>
+      <a href="#applications">My applications</a>
+    </nav>
+    <button class="profile-button" id="profileButton"><span class="avatar">D</span><span>My profile</span></button>
+  </header>
+
+  <main>
+    <section class="hero section-wrap" id="home">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-dot"></span> YOUR CAREER, YOUR PACE</p>
+        <h1>Turn your skills into<br /><span>opportunities.</span></h1>
+        <p class="hero-description">Discover internships, explore learning paths, and keep your career journey moving — all in one place.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#opportunities">Explore opportunities <span aria-hidden="true">↗</span></a>
+          <a class="button button-secondary" href="#learning">Build my skills</a>
+        </div>
+        <div class="social-proof"><div class="mini-avatars"><span>R</span><span>A</span><span>K</span><span>+</span></div><p><strong>Start where you are.</strong><br />Grow one skill at a time.</p></div>
+      </div>
+      <div class="hero-art" aria-label="Career growth illustration">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="floating-card card-top"><span class="float-icon purple">✦</span><div><strong>New skills</strong><small>Open new doors</small></div></div>
+        <div class="growth-illustration">
+          <div class="growth-sun"></div>
+          <div class="growth-bar bar-one"></div><div class="growth-bar bar-two"></div><div class="growth-bar bar-three"></div><div class="growth-bar bar-four"></div>
+          <div class="growth-arrow">↗</div>
+          <div class="plant-pot"><div class="plant-stem"></div><div class="leaf leaf-left"></div><div class="leaf leaf-right"></div><div class="pot"></div></div>
+        </div>
+        <div class="floating-card card-bottom"><span class="float-icon green">✓</span><div><strong>Keep going!</strong><small>Progress adds up</small></div></div>
+      </div>
+    </section>
+
+    <section class="stats-grid section-wrap" aria-label="Your career overview">
+      <article class="stat-card"><div class="stat-top"><span class="stat-icon violet">⌘</span><span class="stat-trend">Your journey</span></div><p class="stat-number" id="savedCount">0</p><p class="stat-label">Saved opportunities</p></article>
+      <article class="stat-card"><div class="stat-top"><span class="stat-icon blue">▤</span><span class="stat-trend">Stay organized</span></div><p class="stat-number" id="applicationCount">0</p><p class="stat-label">Applications tracked</p></article>
+      <article class="stat-card"><div class="stat-top"><span class="stat-icon orange">✦</span><span class="stat-trend">Keep learning</span></div><p class="stat-number" id="skillCount">3</p><p class="stat-label">Skills on your profile</p></article>
+    </section>
+
+    <section class="content-section section-wrap" id="opportunities">
+      <div class="section-heading">
+        <div><p class="eyebrow">TAKE THE NEXT STEP</p><h2>Find your opportunity</h2><p class="section-subtitle">Explore sample roles that can help you gain real-world experience.</p></div>
+        <span class="demo-badge">DEMO LISTINGS</span>
+      </div>
+      <div class="filter-row">
+        <label class="search-box"><span aria-hidden="true">⌕</span><input id="searchInput" type="search" placeholder="Search roles, skills, or companies..." /></label>
+        <select id="typeFilter" aria-label="Filter by opportunity type"><option value="all">All types</option><option value="Internship">Internships</option><option value="Entry-level">Entry-level</option><option value="Project">Projects</option></select>
+        <select id="modeFilter" aria-label="Filter by work mode"><option value="all">Any work mode</option><option value="Remote">Remote</option><option value="Hybrid">Hybrid</option><option value="On-site">On-site</option></select>
+      </div>
+      <div class="job-grid" id="jobGrid"></div>
+      <p class="empty-state hidden" id="emptyState">No matching opportunities. Try another search or filter.</p>
+    </section>
+
+    <section class="content-section section-wrap" id="learning">
+      <div class="section-heading">
+        <div><p class="eyebrow">SMALL STEPS, BIG GROWTH</p><h2>Build skills that open doors</h2><p class="section-subtitle">Choose a learning path and make steady progress.</p></div>
+      </div>
+      <div class="learning-grid">
+        <article class="learning-card">
+          <div class="learning-top"><span class="learning-icon lavender">⌨</span><span class="level-tag">BEGINNER</span></div>
+          <h3>Python Foundations</h3><p>Learn programming basics and build confidence with small projects.</p>
+          <div class="course-meta"><span>◷ 4 weeks</span><span>• 8 lessons</span></div>
+          <div class="progress-label"><span>Your progress</span><strong id="pythonProgressText">25%</strong></div><div class="progress-track"><span id="pythonProgress" style="width:25%"></span></div>
+          <button class="text-button progress-button" data-course="python">Update progress <span>→</span></button>
+        </article>
+        <article class="learning-card">
+          <div class="learning-top"><span class="learning-icon mint">▦</span><span class="level-tag">BEGINNER</span></div>
+          <h3>Excel & Data Skills</h3><p>Practice spreadsheets, formulas, charts, and clear data presentation.</p>
+          <div class="course-meta"><span>◷ 3 weeks</span><span>• 6 lessons</span></div>
+          <div class="progress-label"><span>Your progress</span><strong id="excelProgressText">10%</strong></div><div class="progress-track"><span id="excelProgress" style="width:10%"></span></div>
+          <button class="text-button progress-button" data-course="excel">Update progress <span>→</span></button>
+        </article>
+        <article class="learning-card">
+          <div class="learning-top"><span class="learning-icon peach">✧</span><span class="level-tag">PRACTICE</span></div>
+          <h3>Interview Confidence</h3><p>Prepare introductions, common questions, and professional communication.</p>
+          <div class="course-meta"><span>◷ 1 week</span><span>• 5 activities</span></div>
+          <div class="progress-label"><span>Your progress</span><strong id="interviewProgressText">0%</strong></div><div class="progress-track"><span id="interviewProgress" style="width:0%"></span></div>
+          <button class="text-button progress-button" data-course="interview">Update progress <span>→</span></button>
+        </article>
+      </div>
+    </section>
+
+    <section class="content-section section-wrap applications-section" id="applications">
+      <div class="section-heading">
+        <div><p class="eyebrow">KEEP IT MOVING</p><h2>Application tracker</h2><p class="section-subtitle">A simple place to track the roles you want to follow up on.</p></div>
+      </div>
+      <div class="table-card">
+        <div class="table-heading"><div><strong>Your applications</strong><p>Applications you add will appear here.</p></div><span class="table-count" id="tableCount">0 tracked</span></div>
+        <div class="table-scroll"><table><thead><tr><th>ROLE</th><th>COMPANY</th><th>DATE ADDED</th><th>STATUS</th><th></th></tr></thead><tbody id="applicationRows"></tbody></table></div>
+        <div class="table-empty" id="tableEmpty"><span>▤</span><strong>Your next chapter starts here</strong><p>Save an opportunity and add it to your tracker.</p><a href="#opportunities">Browse opportunities →</a></div>
+      </div>
+    </section>
+
+    <section class="profile-panel section-wrap" id="profilePanel">
+      <div class="profile-panel-copy"><p class="eyebrow">YOUR PERSONAL SPACE</p><h2>Make your profile stand out.</h2><p>Add a few skills and a career goal so you can keep your next steps in view.</p></div>
+      <form id="profileForm" class="profile-form">
+        <label>Display name<input id="nameInput" maxlength="40" placeholder="e.g. Durgadevi" /></label>
+        <label>Career goal<input id="goalInput" maxlength="80" placeholder="e.g. Find a business analyst internship" /></label>
+        <label>Skills (comma-separated)<input id="skillsInput" maxlength="160" placeholder="Python, Excel, Communication" /></label>
+        <button class="button button-primary" type="submit">Save profile</button>
+        <p class="form-note">Demo only: profile information stays in this browser on this device.</p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer"><a class="brand footer-brand" href="#"><span class="brand-mark">S</span><span>SkillBridge</span></a><p>Learn. Practice. Connect.</p><p class="footer-note">Portfolio prototype • Opportunity listings are fictional demo data.</p></footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <dialog id="applyDialog" class="apply-dialog">
+    <form method="dialog" id="applyForm">
+      <button class="dialog-close" aria-label="Close">×</button>
+      <p class="eyebrow">ADD TO YOUR TRACKER</p><h2 id="dialogTitle">Track this opportunity</h2>
+      <p id="dialogCompany" class="dialog-company"></p>
+      <label>Application status<select id="applicationStatus"><option>Interested</option><option>Applied</option><option>Interview</option><option>Offer</option><option>Not selected</option></select></label>
+      <div class="dialog-actions"><button class="button button-secondary" value="cancel">Cancel</button><button class="button button-primary" id="confirmApply" value="save">Add to tracker</button></div>
+    </form>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>
